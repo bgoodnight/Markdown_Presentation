@@ -1,0 +1,15 @@
+```{r echo=FALSE}
+name <- states$state.name[i]
+```
+
+# Report for `r name`
+
+```{r map, echo=FALSE}
+library(usmap)
+library(ggplot2)
+
+plot_usmap(include = states$state.abb[i]) +
+  labs(title = paste("Map of ",name), subtitle = "Data from 1977 Census")
+```
+
+The population of `r states$state.name[i]` in 1977 was `r prettyNum((states$Population[i]*1000),big.mark=",")`. `r states$state.name[i]` has the abbreviation `r states$state.abb[i]` and is located in the `r states$state.region[i]` of the United States.

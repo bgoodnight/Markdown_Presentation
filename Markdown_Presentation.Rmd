@@ -1,0 +1,67 @@
+---
+title: "R Markdown"
+subtitle: "A Brief Introduction"
+author: "Bradley Goodnight"
+date: "April 5, 2019"
+output:
+  powerpoint_presentation:
+    reference_doc: template.pptx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# What is R Markdown?
+
+ - R Markdown is a format for writing reports in R
+ - It is based on Markdown, a simple formatting syntax designed to produce human-readable code
+ - R Markdown can be used to embed R code and results into slideshows, pdfs, html documents, Word files and more
+ 
+# Getting Started with Markdown
+
+ - In RStudio Go to File -> New File -> R Markdown
+ - You can select your desired output format: Word, HTML, PDF
+ - To learn syntax go to Help -> Cheatsheets -> R Markdown Reference Guide
+ 
+# Why use R Markdown?
+
+ - R Markdown allows you to embed R code directly into your documents
+ - This improves reproducibility, can simplify updates, and can be used to produce automated reports
+ 
+# Example Use Cases
+
+ - Embed R Code and results into documents
+ - Change from one format to another (e.g. Powerpoint to Word)
+ - Update or modify tables and graphs
+ - Create automated reports
+ 
+# Embeding R Code
+
+ - Use either inline code or code "chunks"
+ - Example of inline code: `r Sys.time()`
+ - Example of code chunk:
+```{r chunk}
+# Example code chunk
+Sys.time()
+```
+ 
+# Changing Formats
+
+ - Ex: Convert Powerpoint slides to a Word document
+ - Edit the output command at the top of the code **OR**
+ - Click the arrow next to Knit and select a new format
+ 
+# Updating Reports
+```{r update, echo=FALSE}
+# Create example data
+Data <- c(1, 3, 6, 4, 9)
+
+# Graph vector using points overlayed by a line 
+plot(Data, type="o", col="blue")
+```
+
+# Automated Reports
+
+ - Requires two files: a Markdown template and a loop script
+ - Can create multiple versions of the same report with different inputs for each version
